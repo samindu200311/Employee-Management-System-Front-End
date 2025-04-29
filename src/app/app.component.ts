@@ -13,6 +13,7 @@ import { EmployeeService } from './employee.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+loading: any;
   title(title: any) {
     throw new Error('Method not implemented.');
   }

@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let employee of employees">
+      <tr *ngFor="let employee of employees" class="table-row">
         <td>{{ employee.id }}</td>
         <td>{{ employee.name }}</td>
         <td>{{ employee.email }}</td>
@@ -27,7 +27,6 @@
     </tbody>
   </table>
 
-  <!-- Add/Edit Form Popup -->
   <div *ngIf="showPopup" class="popup">
     <div class="popup-content">
       <h2>{{ isEditing ? 'Edit Employee' : 'Add Employee' }}</h2>
@@ -52,7 +51,6 @@
     </div>
   </div>
 
-  <!-- Search -->
   <div class="mt-4">
     <label for="searchId" class="form-label">Search Employee by ID:</label>
     <div class="input-group mb-3">
@@ -61,7 +59,6 @@
     </div>
   </div>
 
-  <!-- Search Result -->
   <div *ngIf="searchedEmployee" class="search-result">
     <h4>Search Result:</h4>
     <p><strong>ID:</strong> {{ searchedEmployee.id }}</p>
@@ -70,8 +67,9 @@
     <p><strong>Department:</strong> {{ searchedEmployee.department }}</p>
   </div>
 
-  <!-- Search Error -->
   <div *ngIf="searchError" class="alert alert-danger">
     {{ searchError }}
   </div>
+
+  <div *ngIf="loading" class="spinner"></div>
 </div>
